@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task3.BLL.Services;
 
 namespace Task3.UI
 {
@@ -10,6 +11,9 @@ namespace Task3.UI
     {
         static void Main(string[] args)
         {
+           Console.WriteLine($"NOD = {Euclid.Nod(48, 64)}");
+
+           Console.ReadKey();
         }
     }
 }
