@@ -7,13 +7,14 @@ using Task3.BLL.Services;
 
 namespace Task3.UI
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-           Console.WriteLine($"NOD = {Euclid.Nod(48, 64)}");
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine($"NOD = {Euclid.Nod(48, 64)}");
 
-           Console.ReadKey();
-        }
-    }
+			Console.WriteLine("Test1");
+			Console.ReadKey();
+		}
+	}
 }
