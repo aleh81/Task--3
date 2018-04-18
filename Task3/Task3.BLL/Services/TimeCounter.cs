@@ -15,7 +15,7 @@ namespace Task3.BLL.Services
 			var result = method(a, b);
 
 			sWatch.Stop();
-		    ticks = sWatch.ElapsedTicks;
+			ticks = sWatch.ElapsedTicks;
 
 			return result;
 		}

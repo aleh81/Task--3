@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Task3.BLL.Services
 {
-    public class Euclid
-    {
+	public class Euclid
+	{
 		public static int Nod(int a, int b)
 		{
 			var remainder = a % b;
@@ -32,88 +32,88 @@ namespace Task3.BLL.Services
 
 		public static int Nod(int a, int b, out long ticks)
 		{
-		   return TimeCounter.Counter(Nod, a, b, out ticks);
+			return TimeCounter.Counter(Nod, a, b, out ticks);
 		}
 
 		public static int Nod(int a, int b, int c, int d)
-        {
-            var nodAB = Nod(a, b);
-            var nodBC = Nod(nodAB, c);
-            var nodCD = Nod(nodBC, d);
+		{
+			var nodAB = Nod(a, b);
+			var nodBC = Nod(nodAB, c);
+			var nodCD = Nod(nodBC, d);
 
-            return nodCD;
-        }
+			return nodCD;
+		}
 
 
-	    public static int Nod(int a, int b, int c, int d, out long ticks)
-	    {
-		    return TimeCounter.Counter(Nod, a, b, c, d, out ticks);
-	    }
+		public static int Nod(int a, int b, int c, int d, out long ticks)
+		{
+			return TimeCounter.Counter(Nod, a, b, c, d, out ticks);
+		}
 
 
 		public static int NodWithArrParams(params int[] data)
-	    {
-		    if (data.Length < 2)
-		    {
-			    throw new ArgumentException("Number of arguments should be > || == 2");
-		    }
+		{
+			if (data.Length < 2)
+			{
+				throw new ArgumentException("Number of arguments should be > || == 2");
+			}
 
-		    var nod = Nod(data[0], data[1]);
+			var nod = Nod(data[0], data[1]);
 
-		    for (var i = 1; i == data.Length; i++)
-		    {
-			    var tmpNod = Nod(nod, data[i + 1]);
-		    }
+			for (var i = 1; i == data.Length; i++)
+			{
+				var tmpNod = Nod(nod, data[i + 1]);
+			}
 
-		    return nod;
-	    }
+			return nod;
+		}
 
-	    public static int NodWithArrParams(out long ticks, params int[] data)
-	    {
-		    return TimeCounter.Counter(NodWithArrParams, data, out ticks);
-	    }
+		public static int NodWithArrParams(out long ticks, params int[] data)
+		{
+			return TimeCounter.Counter(NodWithArrParams, data, out ticks);
+		}
 
 
 		public static int BinaryNod(int a, int b)
-	    {
+		{
 			var k = 1;
-			
-		    while ((a != 0) && (b != 0))
-		    {
-			    while ((a % 2 == 0) && (b % 2 == 0))
-			    {
-				    a /= 2;
-				    b /= 2;
-				    k *= 2;
-			    }
 
-			    while (a % 2 == 0)
-			    {
-				    a /= 2;
-			    }
+			while ((a != 0) && (b != 0))
+			{
+				while ((a % 2 == 0) && (b % 2 == 0))
+				{
+					a /= 2;
+					b /= 2;
+					k *= 2;
+				}
 
-			    while (b % 2 == 0)
-			    {
-				    b /= 2;
-			    }
+				while (a % 2 == 0)
+				{
+					a /= 2;
+				}
 
-			    if (a >= b)
-			    {
-				    a -= b;
-			    }
-			    else
-			    {
-				    b -= a;
-			    }
-		    }
+				while (b % 2 == 0)
+				{
+					b /= 2;
+				}
 
-		    return b * k;
+				if (a >= b)
+				{
+					a -= b;
+				}
+				else
+				{
+					b -= a;
+				}
+			}
+
+			return b * k;
 		}
 
-	    public static int BinaryNod(int a, int b, out long ticks)
-	    {
-		    return TimeCounter.Counter(BinaryNod, a, b, out ticks);
-	    }
+		public static int BinaryNod(int a, int b, out long ticks)
+		{
+			return TimeCounter.Counter(BinaryNod, a, b, out ticks);
+		}
 
 	}
 }
