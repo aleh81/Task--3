@@ -39,7 +39,7 @@ namespace Task3.BLLTests.Services
 
             const int expected = 6;
 
-            var actual = Euclid.NodFour(operandA, opearandB, operandC, operandD);
+            var actual = Euclid.Nod(operandA, opearandB, operandC, operandD);
             Assert.AreEqual(expected, actual);
         }
     }

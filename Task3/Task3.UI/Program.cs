@@ -13,7 +13,7 @@ namespace Task3.UI
 		{
 			Console.WriteLine($"Nod = {Euclid.Nod(48, 64)}");
 
-		    Console.WriteLine($"Nod of four numbers = {Euclid.NodFour(78, 294, 570, 36)}");
+		    Console.WriteLine($"Nod of four numbers = {Euclid.Nod(78, 294, 570, 36)}");
 			Console.ReadKey();
 		}
 	}
