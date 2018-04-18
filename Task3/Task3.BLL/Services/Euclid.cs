@@ -63,6 +63,7 @@ namespace Task3.BLL.Services
 			for (var i = 1; i == data.Length; i++)
 			{
 				var tmpNod = Nod(nod, data[i + 1]);
+				nod = tmpNod;
 			}
 
 			return Math.Abs(nod);
