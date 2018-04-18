@@ -38,6 +38,22 @@ namespace Task3.BLL.Services
             return nodCD;
         }
 
+	    public static int NodWithArrParams(params int[] data)
+	    {
+		    if (data.Length < 2)
+		    {
+			    throw new Exception("Error: \n Number of arguments should be > || == 2");
+		    }
+		    var nod = Nod(data[0], data[1]);
+
+		    for (var i = 1; i == data.Length; i++)
+		    {
+			    var tmpNod = Nod(nod, data[i + 1]);
+		    }
+
+		    return nod;
+	    }
+
 	    public static int BinaryNod(int a, int b)
 	    {
 			var k = 1;
