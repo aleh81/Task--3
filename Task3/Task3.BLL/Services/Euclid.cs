@@ -27,7 +27,7 @@ namespace Task3.BLL.Services
 				a = tmp;
 			}
 
-			return a;
+			return Math.Abs(a);
 		}
 
 		public static int Nod(int a, int b, out long ticks)
@@ -41,7 +41,7 @@ namespace Task3.BLL.Services
 			var nodABC = Nod(nodAB, c);
 			var nodABCD = Nod(nodABC, d);
 
-			return nodABCD;
+			return Math.Abs(nodABCD);
 		}
 
 
@@ -65,7 +65,7 @@ namespace Task3.BLL.Services
 				var tmpNod = Nod(nod, data[i + 1]);
 			}
 
-			return nod;
+			return Math.Abs(nod);
 		}
 
 		public static int NodWithArrParams(out long ticks, params int[] data)
@@ -107,7 +107,9 @@ namespace Task3.BLL.Services
 				}
 			}
 
-			return b * k;
+			var result = b * k;
+
+			return Math.Abs(result);
 		}
 
 		public static int BinaryNod(int a, int b, out long ticks)

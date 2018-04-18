@@ -31,6 +31,17 @@ namespace Task3.BLLTests.Services
 		}
 
 		[TestMethod()]
+		public void NodTest3()
+		{
+			const int operandA = -25;
+			const int operandB = 79;
+			const int expected = 1;
+
+			var actual = Euclid.Nod(operandA, operandB, out var ticks);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod()]
 		public void NodOfFourNumbersTest1()
 		{
 			const int operandA = 78;
@@ -75,6 +86,19 @@ namespace Task3.BLLTests.Services
 		}
 
 		[TestMethod()]
+		public void NodWithArrayParamsTest3()
+		{
+			const int operandA = -539;
+			const int opearandB = 567;
+			const int operandC = 269;
+
+			const int expected = 7;
+
+			var actual = Euclid.NodWithArrParams(out var ticks, operandA, opearandB, operandC);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod()]
 		public void BinaryNodTest1()
 		{
 			const int operandOne = 48;
@@ -85,6 +109,15 @@ namespace Task3.BLLTests.Services
 			Assert.AreEqual(expected, actual);
 		}
 
-		
+		[TestMethod()]
+		public void BinaryNodTest2()
+		{
+			const int operandOne = 259;
+			const int operandTwo = 513;
+			const int expected = 1;
+
+			var actual = Euclid.BinaryNod(operandOne, operandTwo, out var ticks);
+			Assert.AreEqual(expected, actual);
+		}
 	}
 }
