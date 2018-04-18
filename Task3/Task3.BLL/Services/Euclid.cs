@@ -38,10 +38,10 @@ namespace Task3.BLL.Services
 		public static int Nod(int a, int b, int c, int d)
 		{
 			var nodAB = Nod(a, b);
-			var nodBC = Nod(nodAB, c);
-			var nodCD = Nod(nodBC, d);
+			var nodABC = Nod(nodAB, c);
+			var nodABCD = Nod(nodABC, d);
 
-			return nodCD;
+			return nodABCD;
 		}
 
 
