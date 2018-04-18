@@ -13,13 +13,17 @@ namespace Task3.UI
 		{
 			try
 			{
-				Console.WriteLine($"Nod = {Euclid.Nod(48, 64)}");
+				Console.Write($"Nod = {Euclid.Nod(48, 64, out var ticks)} ");
+				Console.WriteLine($"Elapsed time: {ticks} ticks");
 
-				Console.WriteLine($"Nod of four numbers = {Euclid.Nod(78, 294, 570, 36)}");
+				Console.Write($"Nod of four numbers = {Euclid.Nod(78, 294, 570, 36, out ticks)} ");
+				Console.WriteLine($"Elapsed time: {ticks} ticks");
 
-				Console.WriteLine($"Binary Nod = {Euclid.BinaryNod(48, 64)}");
+				Console.Write($"Binary Nod = {Euclid.BinaryNod(48, 64, out ticks)} ");
+				Console.WriteLine($"Elapsed time: {ticks} ticks");
 
-				Console.WriteLine($"Nod with array params = {Euclid.NodWithArrParams(78, 294, 570, 36)}");
+				Console.Write($"Nod with array params = {Euclid.NodWithArrParams(out ticks,  78, 294, 570, 36)} ");
+				Console.WriteLine($"Elapsed time: {ticks} ticks");
 			}
 			catch (Exception e)
 			{

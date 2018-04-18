@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,28 +9,33 @@ namespace Task3.BLL.Services
 {
     public class Euclid
     {
-        public static int Nod(int a, int b)
-        {
-            var remainder = a % b;
-            a = b;
+		public static int Nod(int a, int b)
+		{
+			var remainder = a % b;
+			a = b;
 
-            while (true)
-            {
-                var tmp = remainder;
+			while (true)
+			{
+				var tmp = remainder;
 
-                if (remainder == 0)
-                {
-                    break;
-                }
+				if (remainder == 0)
+				{
+					break;
+				}
 
-                remainder = a % remainder; 
-                a = tmp;
-            }
+				remainder = a % remainder;
+				a = tmp;
+			}
 
-            return a;
-        }
+			return a;
+		}
 
-        public static int Nod(int a, int b, int c, int d)
+		public static int Nod(int a, int b, out long ticks)
+		{
+		   return TimeCounter.Counter(Nod, a, b, out ticks);
+		}
+
+		public static int Nod(int a, int b, int c, int d)
         {
             var nodAB = Nod(a, b);
             var nodBC = Nod(nodAB, c);
@@ -38,12 +44,20 @@ namespace Task3.BLL.Services
             return nodCD;
         }
 
-	    public static int NodWithArrParams(params int[] data)
+
+	    public static int Nod(int a, int b, int c, int d, out long ticks)
+	    {
+		    return TimeCounter.Counter(Nod, a, b, c, d, out ticks);
+	    }
+
+
+		public static int NodWithArrParams(params int[] data)
 	    {
 		    if (data.Length < 2)
 		    {
 			    throw new ArgumentException("Number of arguments should be > || == 2");
 		    }
+
 		    var nod = Nod(data[0], data[1]);
 
 		    for (var i = 1; i == data.Length; i++)
@@ -54,10 +68,16 @@ namespace Task3.BLL.Services
 		    return nod;
 	    }
 
-	    public static int BinaryNod(int a, int b)
+	    public static int NodWithArrParams(out long ticks, params int[] data)
+	    {
+		    return TimeCounter.Counter(NodWithArrParams, data, out ticks);
+	    }
+
+
+		public static int BinaryNod(int a, int b)
 	    {
 			var k = 1;
-
+			
 		    while ((a != 0) && (b != 0))
 		    {
 			    while ((a % 2 == 0) && (b % 2 == 0))
@@ -89,5 +109,11 @@ namespace Task3.BLL.Services
 
 		    return b * k;
 		}
-    }
+
+	    public static int BinaryNod(int a, int b, out long ticks)
+	    {
+		    return TimeCounter.Counter(BinaryNod, a, b, out ticks);
+	    }
+
+	}
 }
