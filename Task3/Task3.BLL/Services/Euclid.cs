@@ -42,7 +42,7 @@ namespace Task3.BLL.Services
 	    {
 		    if (data.Length < 2)
 		    {
-			    throw new Exception("Error: \n Number of arguments should be > || == 2");
+			    throw new ArgumentException("Number of arguments should be > || == 2");
 		    }
 		    var nod = Nod(data[0], data[1]);
 

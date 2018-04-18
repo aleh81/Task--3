@@ -23,9 +23,10 @@ namespace Task3.UI
 			}
 			catch (Exception e)
 			{
+				Console.Beep();
 				Console.BackgroundColor = ConsoleColor.Red;
+				Console.WriteLine(e.GetType());
 				Console.WriteLine(e.Message);
-				throw;
 			}
 
 			Console.ReadKey();
