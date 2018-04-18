@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task3.BLL.Services
 {
-	public class TimeCounter
+	public static class TimeCounter
 	{
 		public static int Counter(Func<int, int, int> method, int a, int b, out long ticks)
 		{
