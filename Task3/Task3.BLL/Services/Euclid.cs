@@ -28,5 +28,14 @@ namespace Task3.BLL.Services
 
             return a;
         }
+
+        public static int NodFour(int a, int b, int c, int d)
+        {
+            var nodAB = Nod(a, b);
+            var nodBC = Nod(nodAB, c);
+            var nodCD = Nod(nodBC, d);
+
+            return nodCD;
+        }
     }
 }

@@ -30,14 +30,16 @@ namespace Task3.BLLTests.Services
         }
 
         [TestMethod()]
-        public void TripleNodTest1()
+        public void NodFourTest1()
         {
-            const int operandOne = 9;
-            const int opearandTwo = 12;
-            const int operandThree = 22;
-            const int expected = 4;
+            const int operandA = 78;
+            const int opearandB = 294;
+            const int operandC = 570;
+            const int operandD = 36;
 
-            var actual = 9;
+            const int expected = 6;
+
+            var actual = Euclid.NodFour(operandA, opearandB, operandC, operandD);
             Assert.AreEqual(expected, actual);
         }
     }
