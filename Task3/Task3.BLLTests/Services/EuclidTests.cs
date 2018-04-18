@@ -30,7 +30,7 @@ namespace Task3.BLLTests.Services
         }
 
         [TestMethod()]
-        public void NodFourTest1()
+        public void NodOfFourNumbersTest1()
         {
             const int operandA = 78;
             const int opearandB = 294;
