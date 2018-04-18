@@ -37,5 +37,41 @@ namespace Task3.BLL.Services
 
             return nodCD;
         }
+
+	    public static int BinaryNod(int a, int b)
+	    {
+			var k = 1;
+
+		    while ((a != 0) && (b != 0))
+		    {
+			    while ((a % 2 == 0) && (b % 2 == 0))
+			    {
+				    a /= 2;
+				    b /= 2;
+				    k *= 2;
+			    }
+
+			    while (a % 2 == 0)
+			    {
+				    a /= 2;
+			    }
+
+			    while (b % 2 == 0)
+			    {
+				    b /= 2;
+			    }
+
+			    if (a >= b)
+			    {
+				    a -= b;
+			    }
+			    else
+			    {
+				    b -= a;
+			    }
+		    }
+
+		    return b * k;
+		}
     }
 }
