@@ -25,9 +25,6 @@ namespace Task3.BLL.Services
 			return Math.Abs(a);
 		}
 
-		public static int Nod(int a, int b, out long ticks) =>
-			TimeCounter.Counter(Nod, a, b, out ticks);
-
 		public static int Nod(int a, int b, int c, int d)
 		{
 			var nodAB = Nod(a, b);
@@ -36,10 +33,6 @@ namespace Task3.BLL.Services
 
 			return Math.Abs(nodABCD);
 		}
-
-
-		public static int Nod(int a, int b, int c, int d, out long ticks) =>
-			TimeCounter.Counter(Nod, a, b, c, d, out ticks);
 
 		public static int NodWithArrParams(params int[] data)
 		{
@@ -58,9 +51,6 @@ namespace Task3.BLL.Services
 
 			return Math.Abs(nod);
 		}
-
-		public static int NodWithArrParams(out long ticks, params int[] data) =>
-			TimeCounter.Counter(NodWithArrParams, data, out ticks);
 
 		public static int BinaryNod(int a, int b)
 		{
@@ -100,7 +90,16 @@ namespace Task3.BLL.Services
 			return Math.Abs(result);
 		}
 
+		public static int NodWithArrParams(out long ticks, params int[] data) =>
+			TimeCounter.Counter(NodWithArrParams, data, out ticks);
+
+		public static int Nod(int a, int b, int c, int d, out long ticks) =>
+			TimeCounter.Counter(Nod, a, b, c, d, out ticks);
+
 		public static int BinaryNod(int a, int b, out long ticks) =>
 			TimeCounter.Counter(BinaryNod, a, b, out ticks);
+
+		public static int Nod(int a, int b, out long ticks) =>
+			TimeCounter.Counter(Nod, a, b, out ticks);
 	}
 }
