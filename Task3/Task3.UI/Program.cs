@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Task3.BLL.Services;
+using Task3.BLL.Helpers;
 
 namespace Task3.UI
 {
@@ -27,10 +28,7 @@ namespace Task3.UI
 			}
 			catch (Exception e)
 			{
-				Console.Beep();
-				Console.BackgroundColor = ConsoleColor.Red;
-				Console.WriteLine(e.GetType());
-				Console.WriteLine(e.Message);
+				ExceptionDisplay.Display(e);
 			}
 
 			Console.ReadKey();

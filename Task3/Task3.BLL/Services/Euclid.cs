@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task3.BLL.Services
 {
-	public class Euclid
+	public static class Euclid
 	{
 		public static int Nod(int a, int b)
 		{
@@ -30,10 +25,8 @@ namespace Task3.BLL.Services
 			return Math.Abs(a);
 		}
 
-		public static int Nod(int a, int b, out long ticks)
-		{
-			return TimeCounter.Counter(Nod, a, b, out ticks);
-		}
+		public static int Nod(int a, int b, out long ticks) =>
+			TimeCounter.Counter(Nod, a, b, out ticks);
 
 		public static int Nod(int a, int b, int c, int d)
 		{
@@ -45,11 +38,8 @@ namespace Task3.BLL.Services
 		}
 
 
-		public static int Nod(int a, int b, int c, int d, out long ticks)
-		{
-			return TimeCounter.Counter(Nod, a, b, c, d, out ticks);
-		}
-
+		public static int Nod(int a, int b, int c, int d, out long ticks) =>
+			TimeCounter.Counter(Nod, a, b, c, d, out ticks);
 
 		public static int NodWithArrParams(params int[] data)
 		{
@@ -69,11 +59,8 @@ namespace Task3.BLL.Services
 			return Math.Abs(nod);
 		}
 
-		public static int NodWithArrParams(out long ticks, params int[] data)
-		{
-			return TimeCounter.Counter(NodWithArrParams, data, out ticks);
-		}
-
+		public static int NodWithArrParams(out long ticks, params int[] data) =>
+			TimeCounter.Counter(NodWithArrParams, data, out ticks);
 
 		public static int BinaryNod(int a, int b)
 		{
@@ -113,10 +100,7 @@ namespace Task3.BLL.Services
 			return Math.Abs(result);
 		}
 
-		public static int BinaryNod(int a, int b, out long ticks)
-		{
-			return TimeCounter.Counter(BinaryNod, a, b, out ticks);
-		}
-
+		public static int BinaryNod(int a, int b, out long ticks) =>
+			TimeCounter.Counter(BinaryNod, a, b, out ticks);
 	}
 }
